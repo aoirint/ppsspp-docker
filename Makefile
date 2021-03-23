@@ -14,6 +14,6 @@ run: build
 		-v "${HOME}/.config/pulse/cookie:/tmp/pulseaudio_cookie" \
 		-e "HOST_UID=$(shell id -u)" \
 		-e "HOST_GID=$(shell id -g)" \
-        -v "${HOME}/.config/ppsspp:/ppsspp_conf" \
+		-v "${HOME}/.config/ppsspp:/ppsspp_conf" \
 		aoirint/ppsspp-docker
 
