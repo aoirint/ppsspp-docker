@@ -9,20 +9,15 @@ RUN apt-get update && \
         cmake \
         libgl1-mesa-dev \
         libsdl2-dev \
-        libvulkan-dev && \
+        libvulkan-dev \
+        gosu && \
     git clone https://github.com/hrydgard/ppsspp.git /ppsspp && \
     cd /ppsspp && \
     git checkout ${PPSSPP_VERSION} && \
-    git submodule update --init --recursive
-
-RUN cd /ppsspp && \
-    cmake .
-RUN cd /ppsspp && \
+    git submodule update --init --recursive && \
+    cd /ppsspp && \
+    cmake . && \
     make
-
-RUN apt-get install -y \
-        gosu
 
 ADD ./docker-entrypoint.sh /
 ENTRYPOINT [ "/docker-entrypoint.sh" ]
-
