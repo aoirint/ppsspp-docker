@@ -2,6 +2,9 @@
 ARG BASE_BUILD_IMAGE=nvidia/opengl:1.2-glvnd-devel-ubuntu18.04
 ARG BASE_RUNTIME_IMAGE=nvidia/opengl:1.2-glvnd-runtime-ubuntu18.04
 
+ARG DEBIAN_FRONTEND=noninteractive
+
+
 # Build
 FROM ${BASE_BUILD_IMAGE} AS build-env
 ARG PPSSPP_VERSION=9435174d491a2e0c1560898e627b31581c37de4e
