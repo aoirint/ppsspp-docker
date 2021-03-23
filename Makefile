@@ -1,7 +1,7 @@
 ROOT_DIR = $(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 
 build:
-	docker build . -t aoirint/ppsspp-docker
+	docker build . -t aoirint/ppsspp
 
 run: build
 	docker run --rm -it \
@@ -15,5 +15,5 @@ run: build
 		-e "HOST_UID=$(shell id -u)" \
 		-e "HOST_GID=$(shell id -g)" \
 		-v "${HOME}/.config/ppsspp:/ppsspp_conf" \
-		aoirint/ppsspp-docker
+		aoirint/ppsspp
 
