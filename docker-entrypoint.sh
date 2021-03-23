@@ -13,4 +13,4 @@ ln -s /pulseaudio/cookie "/home/${USER_NAME}/.config/pulse/cookie"
 chown -R "${USER_NAME}:${USER_NAME}" "/ppsspp_conf"
 ln -s "/ppsspp_conf" "/home/${USER_NAME}/.config/ppsspp"
 
-gosu "${USER_NAME}" /ppsspp/PPSSPPSDL "$@"
+gosu "${USER_NAME}" "$@"
